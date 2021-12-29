@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The 2021 Year in Review for the official RuneScape Wikis.">
+    <title>2021 Year in Review – The RuneScape Wikis</title>
+
+    <link rel="preload" href="fonts/Inter-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="styles/main.css" as="style">
+    <link rel="preload" href="scripts/main.js" as="script">
+    <link rel="preload" href="scripts/parallax.min.js" as="script">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/parallax.min.js" defer></script>
+    <script src="scripts/dygraph.min.js" defer></script>
+    <script src="scripts/focus-visible.min.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">
+            <span class="top">2021</span>
+            <span class="center">Weird Gloop</span>
+            <span class="bottom">Year in Review</span>
+        </h1>
+        <div class="plants">
+            <div class="plants-side plants-top">
+                <div class="plant plant-3" data-depth="0.4" style="--left: -5vw; --width: 45vmin"></div>
+                <div class="plant plant-4" data-depth="0.3" style="--left: 10vw; --width: 65vmin"></div>
+                <div class="plant plant-1" data-depth="0.25" style="--left: 37vw; --width: 65vmin"></div>
+                <div class="plant plant-11" data-depth="0.35" style="--left: 61vw; --width: 55vmin"></div>
+                <div class="plant plant-6" data-depth="0.2" style="--left: 78vw; --width: 45vmin"></div>
+            </div>
+            <div class="plants-side plants-bottom">
+                <div class="plant plant-5" data-depth="0.4" style="--left: -4vw; --width: 35vmin"></div>
+                <div class="plant plant-10" data-depth="0.3" style="--left: 3vw; --width: 55vmin"></div>
+                <div class="plant plant-9" data-depth="0.2" style="--left: 24vw; --width: 27.5vmin; --top: 50px"></div>
+                <div class="plant plant-2" data-depth="0.35" style="--left: 33vw; --width: 45vmin; --top: 30px"></div>
+                <div class="plant plant-7" data-depth="0.3" style="--left: 55vw; --width: 55vmin"></div>
+                <div class="plant plant-8" data-depth="0.2" style="--left: 73vw; --width: 50vmin"></div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <!-- INTRO -->
+        <section>
+            <p>Through all that has happened in 2021, many of us have found comfort by logging in to RuneScape and Old School RuneScape. We at <a class="link" target="_blank" rel="noopener" href="https://weirdgloop.org">Weird Gloop</a> are dedicated to hosting the RuneScape Wikis, the best resources for the games &mdash; and we're proud to show you what we've been doing (including creating our most articles ever in a year). Read on to see what's new, what's changed, and what we've achieved on the wikis in 2021.</p>
+            <div class="wiki-cards">
+                <a class="wiki-card card-rs" href="https://runescape.wiki" target="_blank" rel="noopener"><span>RuneScape<br />Wiki</span></a>
+                <a class="wiki-card card-osrs" href="https://oldschool.runescape.wiki" target="_blank" rel="noopener"><span>Old School RuneScape Wiki</span></a>
+                <a class="wiki-card card-ptbr" href="https://pt.runescape.wiki" target="_blank" rel="noopener"><span>Portuguese-Brazilian Wiki</span></a>
+                <a class="wiki-card card-rsc" href="https://classic.runescape.wiki" target="_blank" rel="noopener"><span>RuneScape Classic Wiki</span></a>
+            </div>
+        </section>
+        <!-- TRAFFIC STATS -->
+        <section>
+            <h2 id="traffic">Traffic statistics</h2>
+            <p>With over 1.3 billion pageviews in 2021, we may be the second-most visited wikis in the world. (The first is Wikipedia, although we won't be catching it anytime soon &mdash; it had more than <a class="link" target="_blank" rel="noopener" href="https://stats.wikimedia.org/#/en.wikipedia.org/reading/total-page-views/normal|bar|2021-01-01~2021-12-31|~total|monthly">100 billion pageviews</a> this year). About half our views came from the United States, with the wikis being visited by 241 different countries and territories in total, including a few new ones: Antarctica, Christmas Island, and Niue.</p>
+            <p></p>The year started out with RuneScape's 20th anniversary events in <a class="link" target="_blank" rel="noopener" title="Grand Party" href="https://runescape.wiki/w/Grand_Party">both</a> <a class="link" target="_blank" rel="noopener" title="20th Anniversary event" href="https://oldschool.runescape.wiki/w/20th_Anniversary_event">games</a> drawing players back; throughout the spring and summer, various quests and expansions caused smaller bumps in views. The sharpest increase came in October, when <a class="link" target="_blank" rel="noopener" href="https://oldschool.runescape.wiki/w/Group_Ironman_Mode">Group Ironman Mode</a> was released in Old School RuneScape. We've annotated some of the more notable surges in traffic on the graph below.</p>
+            <div class="traffic-container traffic">
+                <div class="traffic-title">Pageviews for all wikis <span style="opacity: .7">(7-day rolling avg.)</span></div>
+                <div class="traffic-legend"></div>
+                <div class="traffic-graph" style="width: 100%; height: 300px"></div>
+                <div class="traffic-x-labels"></div>
+            </div>
+            <p>The following is a more detailed per-wiki breakdown of pageviews, visitors, and other statistics. (Yes, the RuneScape Classic Wiki still gets visits, despite the game being defunct, although readership has been slowly declining over the years.)</p>
+            <div class="tab-container">
+                <div class="tab-list" role="tablist" style="--index:0">
+                    <button id="tab-1" class="tab" role="tab" aria-selected="true" aria-controls="panel-1" tabindex="0">
+                        <span class="label-long">RuneScape</span>
+                        <span class="label-short">RS</span>
+                    </button>
+                    <button id="tab-2" class="tab" role="tab" aria-selected="false" aria-controls="panel-2" tabindex="-1">
+                        <span class="label-long">Old School</span>
+                        <span class="label-short">OSRS</span>
+                    </button>
+                    <button id="tab-3" class="tab" role="tab" aria-selected="false" aria-controls="panel-3" tabindex="-1">
+                        <span class="label-long">Portuguese</span>
+                        <span class="label-short">PT-BR</span>
+                    </button>
+                    <button id="tab-4" class="tab" role="tab" aria-selected="false" aria-controls="panel-4" tabindex="-1">
+                        <span class="label-long">Classic</span>
+                        <span class="label-short">RSC</span>
+                    </button>
+                </div>
+                <div id="panel-1" class="tab-panel" role="tabpanel" aria-labelledby="tab-1">
+                    <div class="stats-grid section-rs">
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#mouse2-fill"/></svg>
+                            <div class="stat-value">506<abbr>m</abbr></div>
+                            <div class="stat-description">Total <strong>pageviews</strong> for the RuneScape Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>12%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#people-fill"/></svg>
+                            <div class="stat-value">11.7<abbr>m</abbr></div>
+                            <div class="stat-description">Adjusted <strong>visitors</strong> to the RuneScape Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>6%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#hourglass-split"/></svg>
+                            <div class="stat-value">10:15</div>
+                            <div class="stat-description">Average number of <strong>minutes spent</strong> on the wiki per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>1%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#collection-fill"/></svg>
+                            <div class="stat-value">4.92</div>
+                            <div class="stat-description">Average number of <strong>pages viewed</strong> per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>1%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#geo-fill"/></svg>
+                            <div class="stat-description">Top <strong>countries of origin</strong></div>
+                            <ol>
+                                <li style="--bar-size: 48%"><span>United States</span><span>48%</span></li>
+                                <li style="--bar-size: 12%"><span>United Kingdom</span><span>12%</span></li>
+                                <li style="--bar-size: 7%"><span>Canada</span><span>7%</span></li>
+                                <li style="--bar-size: 5%"><span>Australia</span><span>5%</span></li>
+                            </ol>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#window"/></svg>
+                            <div class="stat-description">Most-used <strong>web browsers</strong></div>
+                            <ol>
+                                <li style="--bar-size: 52%"><span>Chrome</span><span>52%</span></li>
+                                <li style="--bar-size: 35%"><span>Safari</span><span>35%</span></li>
+                                <li style="--bar-size: 6%"><span>Edge</span><span>6%</span></li>
+                                <li style="--bar-size: 4%"><span>Firefox</span><span>4%</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div id="panel-2" class="tab-panel" role="tabpanel" aria-labelledby="tab-2" hidden>
+                    <div class="stats-grid section-osrs">
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#mouse2-fill"/></svg>
+                            <div class="stat-value">883<abbr>m</abbr></div>
+                            <div class="stat-description">Total <strong>pageviews</strong> for the Old School RuneScape Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>17%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#people-fill"/></svg>
+                            <div class="stat-value">23.1<abbr>m</abbr></div>
+                            <div class="stat-description">Adjusted <strong>visitors</strong> to the Old School RuneScape Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>4%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#hourglass-split"/></svg>
+                            <div class="stat-value">9:04</div>
+                            <div class="stat-description">Average number of <strong>minutes spent</strong> on the wiki per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>8%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#collection-fill"/></svg>
+                            <div class="stat-value">4.18</div>
+                            <div class="stat-description">Average number of <strong>pages viewed</strong> per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>5%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#geo-fill"/></svg>
+                            <div class="stat-description">Top <strong>countries of origin</strong></div>
+                            <ol>
+                                <li style="--bar-size: 50%"><span>United States</span><span>50%</span></li>
+                                <li style="--bar-size: 12%"><span>United Kingdom</span><span>12%</span></li>
+                                <li style="--bar-size: 7%"><span>Canada</span><span>7%</span></li>
+                                <li style="--bar-size: 5%"><span>Australia</span><span>5%</span></li>
+                            </ol>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#window"/></svg>
+                            <div class="stat-description">Most-used <strong>web browsers</strong></div>
+                            <ol>
+                                <li style="--bar-size: 46%"><span>Chrome</span><span>46%</span></li>
+                                <li style="--bar-size: 45%"><span>Safari</span><span>45%</span></li>
+                                <li style="--bar-size: 3%"><span>Edge</span><span>3%</span></li>
+                                <li style="--bar-size: 2%"><span>Firefox</span><span>2%</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div id="panel-3" class="tab-panel" role="tabpanel" aria-labelledby="tab-3" hidden>
+                    <div class="stats-grid section-ptbr">
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#mouse2-fill"/></svg>
+                            <div class="stat-value">1.8<abbr>m</abbr></div>
+                            <div class="stat-description">Total <strong>pageviews</strong> for the PT-BR RuneScape Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>52%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#people-fill"/></svg>
+                            <div class="stat-value">118<abbr>k</abbr></div>
+                            <div class="stat-description">Adjusted <strong>visitors</strong> to the PT-BR RuneScape Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>4%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#hourglass-split"/></svg>
+                            <div class="stat-value">5:21</div>
+                            <div class="stat-description">Average number of <strong>minutes spent</strong> on the wiki per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>39%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#collection-fill"/></svg>
+                            <div class="stat-value">2.94</div>
+                            <div class="stat-description">Average number of <strong>pages viewed</strong> per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>14%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#geo-fill"/></svg>
+                            <div class="stat-description">Top <strong>countries of origin</strong></div>
+                            <ol>
+                                <li style="--bar-size: 89%"><span>Brazil</span><span>89%</span></li>
+                                <li style="--bar-size: 5%"><span>Portugal</span><span>5%</span></li>
+                                <li style="--bar-size: 2%"><span>United States</span><span>2%</span></li>
+                                <li style="--bar-size: 1%"><span>United Kingdom</span><span>1%</span></li>
+                            </ol>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#window"/></svg>
+                            <div class="stat-description">Most-used <strong>web browsers</strong></div>
+                            <ol>
+                                <li style="--bar-size: 73%"><span>Chrome</span><span>73%</span></li>
+                                <li style="--bar-size: 10%"><span>Safari</span><span>10%</span></li>
+                                <li style="--bar-size: 7%"><span>Edge</span><span>7%</span></li>
+                                <li style="--bar-size: 5%"><span>Opera</span><span>5%</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div id="panel-4" class="tab-panel" role="tabpanel" aria-labelledby="tab-4" hidden>
+                    <div class="stats-grid section-rsc">
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#mouse2-fill"/></svg>
+                            <div class="stat-value">405<abbr>k</abbr></div>
+                            <div class="stat-description">Total <strong>pageviews</strong> for the RuneScape Classic Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>13%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#people-fill"/></svg>
+                            <div class="stat-value">96<abbr>k</abbr></div>
+                            <div class="stat-description">Adjusted <strong>visitors</strong> to the RuneScape Classic Wiki this year</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-down-fill"/></svg>Down <strong>47%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#hourglass-split"/></svg>
+                            <div class="stat-value">3:09</div>
+                            <div class="stat-description">Average number of <strong>minutes spent</strong> on the wiki per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>95%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#collection-fill"/></svg>
+                            <div class="stat-value">3.26</div>
+                            <div class="stat-description">Average number of <strong>pages viewed</strong> per session</div>
+                            <div class="stat-change"><svg class="change-icon" width="16" height="16"><use href="images/icons/bootstrap-icons.svg#caret-up-fill"/></svg>Up <strong>39%</strong> from previous year</div>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#geo-fill"/></svg>
+                            <div class="stat-description">Top <strong>countries of origin</strong></div>
+                            <ol>
+                                <li style="--bar-size: 49%"><span>United States</span><span>49%</span></li>
+                                <li style="--bar-size: 12%"><span>United Kingdom</span><span>12%</span></li>
+                                <li style="--bar-size: 7%"><span>Canada</span><span>7%</span></li>
+                                <li style="--bar-size: 5%"><span>Netherlands</span><span>5%</span></li>
+                            </ol>
+                        </div>
+                        <div class="stat">
+                            <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#window"/></svg>
+                            <div class="stat-description">Most-used <strong>web browsers</strong></div>
+                            <ol>
+                                <li style="--bar-size: 54%"><span>Chrome</span><span>54%</span></li>
+                                <li style="--bar-size: 20%"><span>Safari</span><span>20%</span></li>
+                                <li style="--bar-size: 9%"><span>Edge</span><span>9%</span></li>
+                                <li style="--bar-size: 6%"><span>Firefox</span><span>6%</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- COMMUNITY STATS -->
+        <section>
+            <h2 id="community">Community statistics</h2>
+            <p>The wiki's greatest strength has always been the editors that make it possible, from regular contributors to anonymous users who fix small typos. Whether it's uploading an image, covering new updates, or helping write a new guide, we owe our success to every one of the thousands of players who read and edit the site.</p>
+            <div class="stats-grid" style="--stat-color: #7190e6; margin-top: 2em">
+                <div class="stat">
+                    <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#file-text-fill"/></svg>
+                    <div class="stat-value">10,506</div>
+                    <div class="stat-description"><strong>Pages created</strong> by our community across all wikis</div>
+                </div>
+                <div class="stat">
+                    <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#file-image"/></svg>
+                    <div class="stat-value">45,401</div>
+                    <div class="stat-description"><strong>Images uploaded</strong> by our community across all wikis</div>
+                </div>
+                <div class="stat">
+                    <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#pencil-fill"/></svg>
+                    <div class="stat-value">471<abbr>k</abbr></div>
+                    <div class="stat-description"><strong>Edits made</strong> by our community across all wikis</div>
+                </div>
+                <div class="stat">
+                    <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#person-workspace"/></svg>
+                    <div class="stat-value">3,004</div>
+                    <div class="stat-description"><strong>New users</strong> who edited at least once this year</div>
+                </div>
+                <div class="stat">
+                    <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#chat-left-dots-fill"/></svg>
+                    <div class="stat-value">1.4m</div>
+                    <div class="stat-description"><strong>Messages sent</strong> in our <a class="link" target="_blank" rel="noopener" href="https://discord.gg/runescapewiki">Discord server</a> this year</div>
+                </div>
+                <div class="stat">
+                    <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#award-fill"/></svg>
+                    <div class="stat-value">65</div>
+                    <div class="stat-description">In-game <strong><a class="link" target="_blank" rel="noopener" href="https://runescape.wiki/w/RuneScape:The_Wikian">Wikian titles</a> awarded </strong> to new editors this year</div>
+                </div>
+            </div>
+        </section>
+        <!-- TECHNICAL -->
+        <section>
+            <h2 id="technical">Technical changes</h2>
+            <p>In the second half of 2021, the Weird Gloop sysadmins were hard at work on a major upgrade to the wiki servers. Launching progressively between September and November, we moved the entire infrastructure to use Kubernetes on Google Cloud. This gave us increased reliability, greater flexibility, and about 40-50% faster load times for page views that hit our servers.</p>
+            <div class="traffic-container site-speed">
+                <div class="traffic-title">Time to first paint <span style="opacity: .7">(7-day rolling avg.)</span></div>
+                <div class="traffic-legend"></div>
+                <div class="site-speed-graph" style="width: 100%; height: 300px"></div>
+                <div class="traffic-x-labels"></div>
+            </div>
+            <p>When combined with <a class="link" target="_blank" rel="noopener" href="https://blog.cloudflare.com/orpheus/">improvements in our CDN's caching network</a>, the resulting average page load time was cut nearly in half! In comparison, Wikipedia ___. These upgrades makes us competitive with larger and better-funded projects in pushing the MediaWiki software to its performance limits.</p>
+        </section>
+        <!-- QUIZ -->
+        <section>
+            <h2 id="quiz">Trivia quiz</h2>
+            <p>The wikis have no shortage of interesting trivia, with a dedicated trivia section on over 15,000 pages. Think you know your stuff? Give our quizzes a go and see how you well you know the game! If you want to try more than one, you'll get the chance to choose again after you've finished a quiz.</p>
+            <div class="quiz"></div>
+        </section>
+        <!-- CLOSING -->
+        <section>
+            <p>In 2020 we were honoured to be recognised as Community Champion at the <a class="link" target="_blank" rel="noopener" href="https://secure.runescape.com/m=news/10th-annual-golden-gnome-awards-the-winners-are-revealed">10th Annual Golden Gnome Awards</a>. We again want to thank each and every one of you who read and edited the wiki this year for your support. We truly could not be where we are today without all your help, and we hope to serve the RuneScape community for years to come.</p>
+            <figure>
+                <div class="picture-container">
+                    <picture data-src-full="images/full/runefest1.jpg" data-src-full-p3="images/full/runefest1-p3.jpg">
+                        <source media="(color-gamut: p3)" srcset="images/thumb/runefest1-p3.jpg, images/thumb/runefest1-p3@2x.jpg 2x" />
+                        <img width="600" height="358" class="thumb" loading="lazy" src="images/thumb/runefest1.jpg" srcset="images/thumb/runefest1@2x.jpg 2x" alt="Musicians performing onstage at the Golden Gnome Awards during RuneFest 2019" />
+                    </picture>
+                    <div class="fullscreen-button"><svg class="fullscreen-icon"><use href="images/icons/bootstrap-icons.svg#arrows-angle-expand"/></svg></div>
+                </div>
+                <div class="picture-container">
+                    <picture data-src-full="images/full/runefest2.jpg" data-src-full-p3="images/full/runefest2-p3.jpg">
+                        <source media="(color-gamut: p3)" srcset="images/thumb/runefest2-p3.jpg, images/thumb/runefest2-p3@2x.jpg 2x" />
+                        <img width="600" height="358" class="thumb" loading="lazy" src="images/thumb/runefest2.jpg" srcset="images/thumb/runefest2@2x.jpg 2x" alt="The Golden Gnome statues displayed on pedestals at RuneFest 2019" />
+                    </picture>
+                    <div class="fullscreen-button"><svg class="fullscreen-icon"><use href="images/icons/bootstrap-icons.svg#arrows-angle-expand"/></svg></div>
+                </div>
+                <figcaption>The Golden Gnome Awards at RuneFest 2019. Unfortunately, we couldn't accept in person in 2020.</figcaption>
+            </figure>
+            <p>If you want to get involved with the wiki, there's always work to do, and new projects get started all the time. If you haven't edited before and aren't sure where to start, check out the One Small Wiki Favour program, which regularly highlights different community projects and rewards in-game bonds for helping out.</p>
+            <p>2020 was a year full of unique trials to overcome, and we're aiming to make 2021 the best year we've had on the wikis yet. We hope you join us in making the wikis as good as they possibly can be, so don't be afraid to hop into <a class="link social discord" target="_blank" rel="noopener" href="https://discord.com/invite/runescapewiki">our Discord server</a> or chat with us on Twitter, <a class="link social twitter" target="_blank" rel="noopener" href="https://twitter.com/rswiki">@RSWiki</a> and <a class="link social twitter" target="_blank" rel="noopener" href="https://twitter.com/osrs_wiki">@OSRS_Wiki</a>.</p>
+            <p class="signature">From all of us at the RuneScape Wikis<br />(which could include you, too!)<br /><span style="display: inline-block; margin-top: .4em">January 1, 2022</span><p>
+        </section>
+    </main>
+    <template class="template-quiz-group">
+        <div class="quiz-group unanswered">
+            <div class="quiz-number"></div>
+            <p class="quiz-question"></p>
+            <ul class="quiz-choice-group"></ul>
+            <div class="quiz-explanation"></div>
+        </div>
+    </template>
+    <template class="template-quiz-results">
+        <div class="quiz-results">
+            <h3 style="font-size: 1.25em"></h3>
+            <p style="margin-bottom: .75em"></p>
+            <p style="margin-bottom: 0"><span class="link reset-quiz" role="button">Click here to try another quiz →</span></p>
+        </div>
+    </template>
+    <template class="template-modal">
+        <div class="modal">
+            <div class="full-image-container">
+                <img class="full-image" />
+                <div class="note">Click anywhere or press Esc to close.</div>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>
