@@ -179,7 +179,7 @@
         let trafficData = './data/traffic.csv',
             siteSpeedData = './data/site-speed.csv',
             gridColor = '#efefef',
-            locale = 'default',
+            locale = 'en-GB',
             dateOptions = {
                 day: 'numeric',
                 month: 'long'
@@ -673,7 +673,7 @@
 
         // use different image depending on if user's display supports P3
         // <https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/>
-        if (window.matchMedia('(color-gamut: p3)').matches) src = 'srcFullP3';
+        // if (window.matchMedia('(color-gamut: p3)').matches) src = 'srcFullP3';
 
         for (let picture of pictures) {
             picture.addEventListener('mouseover', preloadFullImage, { once: true });
