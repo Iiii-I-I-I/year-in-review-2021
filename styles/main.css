@@ -849,7 +849,7 @@ section + section {
        DYGRAPH
    -------------- */
 
-.traffic-container {
+.dygraph-container {
     --range-pad: 7px; /* must be >= xRangePad option for dygraph in main.js */
 
     background-color: var(--bg-03);
@@ -860,17 +860,17 @@ section + section {
     position: relative;
 }
 
-.traffic-graph {
-    position: relative; /* for .traffic-y-labels */
+.dygraph-graph {
+    position: relative; /* for .dygraph-y-labels */
 }
 
-.traffic-title {
+.dygraph-title {
     font-size: .95em;
     font-weight: bold;
     margin: 0 0 .25em var(--range-pad);
 }
 
-.traffic-legend {
+.dygraph-legend {
     position: absolute;
     font-size: .8rem;
     background-color: var(--bg-03);
@@ -881,15 +881,15 @@ section + section {
     z-index: 1;
 }
 
-.traffic-legend-date {
+.dygraph-legend-date {
     font-weight: bold;
 }
 
-.traffic-legend-change {
+.dygraph-legend-change {
     color: var(--text-03);
 }
 
-.traffic-x-labels {
+.dygraph-x-labels {
     display: flex;
     justify-content: space-between;
     width: calc(100% - 8px);
@@ -907,18 +907,22 @@ section + section {
     display: none;
 }
 
-.traffic-y-labels {
+.dygraph-y-labels {
     position: absolute;
-    right: calc(var(--range-pad) + 5px);
-    bottom: 0;
     pointer-events: none;
+    bottom: 0;
+}
+
+.traffic .dygraph-y-labels {
+    right: calc(var(--range-pad) + 5px);
+}
+
+.site-speed .dygraph-y-labels {
+    left: var(--range-pad);
 }
 
 .y-label {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
     font-size: .7rem;
     color: var(--text-03);
     letter-spacing: .05ch;
@@ -926,11 +930,19 @@ section + section {
 }
 
 .traffic .y-label {
-    height: 42.85px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: calc(300px / 7);
 }
 
 .site-speed .y-label {
-    height: 60px;
+    align-items: flex-end;
+    height: calc(300px / 5);
+}
+
+/* hide first label when legend is showing so bottom half doesn't peek out */
+.site-speed .dygraph-graph:hover .y-label:first-child {
+    display: none;
 }
 
 .dygraph-annotation {
@@ -983,7 +995,7 @@ section + section {
 
 @media screen and (max-width: 600px) {
 
-    .traffic-graph {
+    .dygraph-graph {
         height: 250px !important;
     }
 
@@ -995,19 +1007,23 @@ section + section {
         display: none;
     }
 
-    .y-label {
-        height: 31px;
+    .traffic .y-label {
+        height: calc(250px / 7);
+    }
+
+    .site-speed .y-label {
+        height: calc(250px / 5);
     }
 
 }
 
 @media screen and (max-width: 800px) {
 
-    .traffic-container {
+    .dygraph-container {
         padding: 1em;
     }
 
-    .traffic-legend {
+    .dygraph-legend {
         left: 1rem;
     }
 

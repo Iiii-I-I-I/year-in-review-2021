@@ -46,7 +46,7 @@
     <main class="container">
         <!-- INTRO -->
         <section>
-            <p>Through all that has happened in 2021, many of us have found comfort by logging in to RuneScape and Old School RuneScape. We at <a class="link" target="_blank" rel="noopener" href="https://weirdgloop.org">Weird Gloop</a> are dedicated to hosting the RuneScape Wikis, the best resources for the games &mdash; and we're proud to show you what we've been doing (including creating our most articles ever in a year). Read on to see what's new, what's changed, and what we've achieved on the wikis in 2021.</p>
+            <p>Through all that has happened in 2021, many of us found comfort by logging in to RuneScape and Old School RuneScape. We at <a class="link" target="_blank" rel="noopener" href="https://weirdgloop.org">Weird Gloop</a> are dedicated to hosting the RuneScape Wikis, the best resources for the games &mdash; and we're proud to show you what we've done (including creating our most articles ever in a year). Read on to see what's new, what's changed, and what we've achieved on the wikis in 2021.</p>
             <div class="wiki-cards">
                 <a class="wiki-card card-rs" href="https://runescape.wiki" target="_blank" rel="noopener"><span>RuneScape<br />Wiki</span></a>
                 <a class="wiki-card card-osrs" href="https://oldschool.runescape.wiki" target="_blank" rel="noopener"><span>Old School RuneScape Wiki</span></a>
@@ -59,11 +59,11 @@
             <h2 id="traffic">Traffic statistics</h2>
             <p>With over 1.3 billion pageviews in 2021, we may be the second-most visited wikis in the world. (The first is Wikipedia, although we won't be catching it anytime soon &mdash; it had more than <a class="link" target="_blank" rel="noopener" href="https://stats.wikimedia.org/#/en.wikipedia.org/reading/total-page-views/normal|bar|2021-01-01~2021-12-31|~total|monthly">100 billion pageviews</a> this year). About half our views came from the United States, with the wikis being visited by 241 different countries and territories in total, including a few new ones: Antarctica, Christmas Island, and Niue.</p>
             <p></p>The year started out with RuneScape's 20th anniversary events in <a class="link" target="_blank" rel="noopener" title="Grand Party" href="https://runescape.wiki/w/Grand_Party">both</a> <a class="link" target="_blank" rel="noopener" title="20th Anniversary event" href="https://oldschool.runescape.wiki/w/20th_Anniversary_event">games</a> drawing players back; throughout the spring and summer, various quests and expansions caused smaller bumps in views. The sharpest increase came in October, when <a class="link" target="_blank" rel="noopener" href="https://oldschool.runescape.wiki/w/Group_Ironman_Mode">Group Ironman Mode</a> was released in Old School RuneScape. We've annotated some of the more notable surges in traffic on the graph below.</p>
-            <div class="traffic-container traffic">
-                <div class="traffic-title">Pageviews for all wikis <span style="opacity: .7">(7-day rolling avg.)</span></div>
-                <div class="traffic-legend"></div>
-                <div class="traffic-graph" style="width: 100%; height: 300px"></div>
-                <div class="traffic-x-labels"></div>
+            <div class="dygraph-container traffic">
+                <div class="dygraph-title">Daily pageviews <span style="opacity: .7">(7-day rolling avg.)</span></div>
+                <div class="dygraph-legend"></div>
+                <div class="dygraph-graph" style="width: 100%; height: 300px"></div>
+                <div class="dygraph-x-labels"></div>
             </div>
             <p>The following is a more detailed per-wiki breakdown of pageviews, visitors, and other statistics. (Yes, the RuneScape Classic Wiki still gets visits, despite the game being defunct, although readership has been slowly declining over the years.)</p>
             <div class="tab-container">
@@ -282,7 +282,7 @@
         <!-- COMMUNITY STATS -->
         <section>
             <h2 id="community">Community statistics</h2>
-            <p>The wiki's greatest strength has always been the editors that make it possible, from regular contributors to anonymous users who fix small typos. Whether it's uploading an image, covering new updates, or helping write a new guide, we owe our success to every one of the thousands of players who read and edit the site.</p>
+            <p>The wiki's greatest strength has always been the editors who make it possible, from regular contributors, to anonymous users who fix typos. Whether it's uploading an image, covering new updates, or helping write a new guide, we owe our successes to every one of the thousands of players who read and edit the site.</p>
             <div class="stats-grid" style="--stat-color: #7190e6; margin-top: 2em">
                 <div class="stat">
                     <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#file-text-fill"/></svg>
@@ -302,7 +302,7 @@
                 <div class="stat">
                     <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#person-workspace"/></svg>
                     <div class="stat-value">3,004</div>
-                    <div class="stat-description"><strong>New users</strong> who edited at least once this year</div>
+                    <div class="stat-description"><strong>New accounts</strong> who made at least one edit this year</div>
                 </div>
                 <div class="stat">
                     <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#chat-left-dots-fill"/></svg>
@@ -312,32 +312,43 @@
                 <div class="stat">
                     <svg class="stat-icon"><use href="images/icons/bootstrap-icons.svg#award-fill"/></svg>
                     <div class="stat-value">65</div>
-                    <div class="stat-description">In-game <strong><a class="link" target="_blank" rel="noopener" href="https://runescape.wiki/w/RuneScape:The_Wikian">Wikian titles</a> awarded </strong> to new editors this year</div>
+                    <div class="stat-description">New <strong><a class="link" target="_blank" rel="noopener" href="https://runescape.wiki/w/RuneScape:The_Wikian">Wikian titles</a> awarded </strong> to editors in-game</div>
                 </div>
             </div>
         </section>
         <!-- TECHNICAL -->
         <section>
             <h2 id="technical">Technical changes</h2>
-            <p>In the second half of 2021, the Weird Gloop sysadmins were hard at work on a major upgrade to the wiki servers. Launching progressively between September and November, we moved the entire infrastructure to use Kubernetes on Google Cloud. This gave us increased reliability, greater flexibility, and about 40-50% faster load times for page views that hit our servers.</p>
-            <div class="traffic-container site-speed">
-                <div class="traffic-title">Time to first paint <span style="opacity: .7">(7-day rolling avg.)</span></div>
-                <div class="traffic-legend"></div>
-                <div class="site-speed-graph" style="width: 100%; height: 300px"></div>
-                <div class="traffic-x-labels"></div>
+            <p>In the second half of 2021, the Weird Gloop sysadmins were hard at work on a major upgrade to the wiki servers. Launching progressively between September and November, we moved our infrastructure from OVH to Google Cloud. This gave us increased reliability, greater flexibility, and faster load times for page views that hit our servers.</p>
+            <p>Below, we've graphed the wikis' time to first byte (TTFB), which measures the time it takes for your browser to receive the first byte of page content from the server. TTFB is a good indicator of how responsive a site is.</p>
+            <div class="dygraph-container site-speed">
+                <div class="dygraph-title">Time to first byte <span style="opacity: .7">(7-day rolling avg.)</span></div>
+                <div class="dygraph-legend"></div>
+                <div class="dygraph-graph" style="width: 100%; height: 300px"></div>
+                <div class="dygraph-x-labels"></div>
             </div>
-            <p>When combined with <a class="link" target="_blank" rel="noopener" href="https://blog.cloudflare.com/orpheus/">improvements in our CDN's caching network</a>, the resulting average page load time was cut nearly in half! In comparison, Wikipedia ___. These upgrades makes us competitive with larger and better-funded projects in pushing the MediaWiki software to its performance limits.</p>
+            <p>We had an average TTFB of 270 milliseconds over the past year. For comparison, that's 20% faster than Wikipedia, which <a class="link" target="_blank" rel="noopener" href="https://performance.wikimedia.org/#!/year">averaged 340 milliseconds</a>. When combined with <a class="link" target="_blank" rel="noopener" href="https://blog.cloudflare.com/orpheus/">improvements to our CDN's caching network</a>, these changes cut our average page load time nearly in half! Our upgrades help make us competitive with better-funded projects in pushing the MediaWiki software to its performance limits.</p>
+        </section>
+        <section>
+            <h2 id="milestones">Milestones</h2>
+            <ul class="milestone-list">
+                <li>
+                    <div class="milestone-date">1 January 2021</div>
+                    <h3>Wiki merch</h3>
+                    <p>The wikis started off the year by thanking our dedicated community with custom printed shirts and masks. Later in the year, editors posed with their merch for our first ever Merch Family Photo.</p>
+                </li>
+            </ul>
         </section>
         <!-- QUIZ -->
         <section>
             <h2 id="quiz">Trivia quiz</h2>
-            <p>The wikis have no shortage of interesting trivia, with a dedicated trivia section on over 15,000 pages. Think you know your stuff? Give our quizzes a go and see how you well you know the game! If you want to try more than one, you'll get the chance to choose again after you've finished a quiz.</p>
+            <p>The wikis have no shortage of interesting facts, with dedicated trivia sections on over 15,000 pages. Think you know your stuff? Give our quizzes a go and see how you well you know the game! If you want to try more than one category, you'll get the chance to pick again after you finish a quiz.</p>
             <div class="quiz"></div>
         </section>
         <!-- CLOSING -->
         <section>
-            <p>In 2020 we were honoured to be recognised as Community Champion at the <a class="link" target="_blank" rel="noopener" href="https://secure.runescape.com/m=news/10th-annual-golden-gnome-awards-the-winners-are-revealed">10th Annual Golden Gnome Awards</a>. We again want to thank each and every one of you who read and edited the wiki this year for your support. We truly could not be where we are today without all your help, and we hope to serve the RuneScape community for years to come.</p>
-            <figure>
+            <p>2021 was a year full of unique trials, so we're looking forward to covering all the new game content coming in 2022. Whether it's Het's Oasis, the third Old School League, or the new Trade Octagon stock market minigame, we hope you'll check out the wikis as you play and help your fellow gamers document every rat in RuneScape.</p>
+            <!-- <figure>
                 <div class="picture-container">
                     <picture data-src-full="images/full/runefest1.jpg" data-src-full-p3="images/full/runefest1-p3.jpg">
                         <source media="(color-gamut: p3)" srcset="images/thumb/runefest1-p3.jpg, images/thumb/runefest1-p3@2x.jpg 2x" />
@@ -353,10 +364,9 @@
                     <div class="fullscreen-button"><svg class="fullscreen-icon"><use href="images/icons/bootstrap-icons.svg#arrows-angle-expand"/></svg></div>
                 </div>
                 <figcaption>The Golden Gnome Awards at RuneFest 2019. Unfortunately, we couldn't accept in person in 2020.</figcaption>
-            </figure>
-            <p>If you want to get involved with the wiki, there's always work to do, and new projects get started all the time. If you haven't edited before and aren't sure where to start, check out the One Small Wiki Favour program, which regularly highlights different community projects and rewards in-game bonds for helping out.</p>
-            <p>2020 was a year full of unique trials to overcome, and we're aiming to make 2021 the best year we've had on the wikis yet. We hope you join us in making the wikis as good as they possibly can be, so don't be afraid to hop into <a class="link social discord" target="_blank" rel="noopener" href="https://discord.com/invite/runescapewiki">our Discord server</a> or chat with us on Twitter, <a class="link social twitter" target="_blank" rel="noopener" href="https://twitter.com/rswiki">@RSWiki</a> and <a class="link social twitter" target="_blank" rel="noopener" href="https://twitter.com/osrs_wiki">@OSRS_Wiki</a>.</p>
-            <p class="signature">From all of us at the RuneScape Wikis<br />(which could include you, too!)<br /><span style="display: inline-block; margin-top: .4em">January 1, 2022</span><p>
+            </figure> -->
+            <p>If you want to get involved with the wiki, there's always work to do, and new projects are getting started all the time. If you haven't edited before and aren't sure where to start, join us in <a class="link social discord" target="_blank" rel="noopener" href="https://discord.com/invite/runescapewiki">our Discord</a> or tweet at us, <a class="link social twitter" target="_blank" rel="noopener" href="https://twitter.com/rswiki">@RSWiki</a> and <a class="link social twitter" target="_blank" rel="noopener" href="https://twitter.com/osrs_wiki">@OSRS_Wiki</a>.</p>
+            <p class="signature">&mdash; From all of us at the RuneScape Wikis<br />January 1, 2022<p>
         </section>
     </main>
     <template class="template-quiz-group">

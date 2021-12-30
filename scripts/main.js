@@ -186,7 +186,7 @@
             };
 
         // draw traffic graph
-        new Dygraph(get('.traffic-graph'), trafficData, {
+        let trafficGraph = new Dygraph(get('.traffic .dygraph-graph'), trafficData, {
                 color: '#47a2d9',
                 strokeWidth: 3,
                 axisLineColor: gridColor,
@@ -194,7 +194,7 @@
                 gridLineWidth: 1,
                 highlightCircleSize: 4,
                 xRangePad: 4, // must match highlightCircleSize
-                labelsDiv: get('.traffic .traffic-legend'),
+                labelsDiv: get('.traffic .dygraph-legend'),
                 rollPeriod: 7,
                 fillGraph: true,
                 interactionModel: {
@@ -238,14 +238,14 @@
 
                             labelNode.appendChild(shortLabel);
                             labelNode.appendChild(longLabel);
-                            get('.traffic .traffic-x-labels').appendChild(labelNode);
+                            get('.traffic .dygraph-x-labels').appendChild(labelNode);
                         }
 
                         // create custom y-axis labels (can't position default ones over top of graph)
                         let yAxisLabels = document.createElement('div');
 
-                        yAxisLabels.classList.add('traffic-y-labels');
-                        get('.traffic .traffic-graph').appendChild(yAxisLabels);
+                        yAxisLabels.classList.add('dygraph-y-labels');
+                        get('.traffic .dygraph-graph').appendChild(yAxisLabels);
 
                         for (let i = 6; i >= 0; i--) {
                             let viewLabel = document.createElement('div');
@@ -262,18 +262,6 @@
 
                         annotation.appendChild(tooltip);
                         annotation.removeAttribute('title');
-
-                        // reposition tooltip if it goes offscreen
-                        let tooltipRect = tooltip.getBoundingClientRect(),
-                            leftPos = tooltipRect.left,
-                            rightPos = document.body.clientWidth - tooltipRect.right,
-                            margin = 16;
-
-                        if (leftPos < 0) {
-                            tooltip.style.left = -leftPos + margin + 'px';
-                        } else if (rightPos < 0) {
-                            tooltip.style.left = rightPos - margin + 'px';
-                        }
                     });
                 },
                 legendFormatter: function (data) {
@@ -285,9 +273,9 @@
                         change = data.series[0].yHTML.change;
                     }
 
-                    return `<div class="traffic-legend-date">${date}</div>` +
-                           `<div class="traffic-legend-views">Avg. views: ${average}</div>` +
-                           `<div class="traffic-legend-change">7-day change: ${change}</div>`;
+                    return `<div class="dygraph-legend-date">${date}</div>` +
+                           `<div class="dygraph-legend-views">Avg. views: ${average}</div>` +
+                           `<div class="dygraph-legend-change">7-day change: ${change}</div>`;
                 },
                 axes: {
                     x: {
@@ -297,7 +285,7 @@
                     y: {
                         drawAxis: false,
                         includeZero: true,
-                        valueRange: [null, 7000000],
+                        valueRange: [0, 7000000],
                         valueFormatter: function (num, opts, series, graph, row, col) {
                             // original un-averaged value for this point
                             let currentValue = graph.getValue(row, col);
@@ -308,19 +296,19 @@
 
                             if (change < 0) {
                                 // replace default hyphen (VERY WRONG) with actual negative symbol
-                                change = '−' + change.toString().substring(1);
+                                change = '−' + change.toString().substring(1) + '%';
                             } else {
                                 // plus sign for positive numbers
-                                change = '+' + change;
+                                change = '+' + change + '%';
                             }
 
                             // 7-day change not possible for first 7 days
-                            if (row < 7) change = '–';
+                            if (row < 7) change = 'N/A';
 
                             return {
                                 actual: currentValue.toLocaleString(locale),
                                 average: Math.round(num).toLocaleString(locale), // auto-averaged over rollPeriod
-                                change: change + '%'
+                                change: change
                             };
                         }
                     }
@@ -340,8 +328,8 @@
                     x: "2021/05/26",
                     text: "Old School: Clans system is released"
                 }, {
-                    x: "2021/06/21",
-                    text: "RuneScape: City of Senntisten is released"
+                    x: "2021/06/16",
+                    text: "Old School: A Kingdom Divided is released"
                 }, {
                     x: "2021/07/26",
                     text: "RuneScape: Nodon Front is released"
@@ -352,6 +340,9 @@
                 }, {
                     x: "2021/10/25",
                     text: "RuneScape: TzekHaar Front is released"
+                }, {
+                    x: "2021/11/25",
+                    text: "Old School: Android client beta testing begins"
                 }
             ],
             trafficTooltips = [];
@@ -369,7 +360,7 @@
         });
 
         // draw site speed graph
-        new Dygraph(get('.site-speed-graph'), siteSpeedData, {
+        let siteSpeedGraph = new Dygraph(get('.site-speed .dygraph-graph'), siteSpeedData, {
                 color: '#f48121',
                 strokeWidth: 3,
                 axisLineColor: gridColor,
@@ -377,7 +368,7 @@
                 gridLineWidth: 1,
                 highlightCircleSize: 4,
                 xRangePad: 4, // must match highlightCircleSize
-                labelsDiv: get('.site-speed .traffic-legend'),
+                labelsDiv: get('.site-speed .dygraph-legend'),
                 rollPeriod: 7,
                 fillGraph: true,
                 interactionModel: {
@@ -394,18 +385,8 @@
                         event.target.dispatchEvent(simulation);
                     }
                 },
-                annotationMouseOverHandler: function (annotation) {
-                    annotation.div.classList.remove('tooltip-hidden');
-                    annotation.div.style.zIndex = '100'; // make sure tooltip appears on top of annotations
-                },
-                annotationMouseOutHandler: function (annotation) {
-                    annotation.div.classList.add('tooltip-hidden');
-                    annotation.div.style.removeProperty('z-index');
-                },
                 drawCallback: function (dygraph, isInitial) {
                     if (isInitial) {
-                        dygraph.setAnnotations(siteSpeedAnnotations);
-
                         // create custom x-axis labels (default ones are misaligned)
                         for (let i = 0; i < 12; i++) {
                             let month = new Date(2021, i).toLocaleString(locale, { month: 'short' }),
@@ -421,14 +402,14 @@
 
                             labelNode.appendChild(shortLabel);
                             labelNode.appendChild(longLabel);
-                            get('.site-speed .traffic-x-labels').appendChild(labelNode);
+                            get('.site-speed .dygraph-x-labels').appendChild(labelNode);
                         }
 
                         // create custom y-axis labels (can't position default ones over top of graph)
                         let yAxisLabels = document.createElement('div');
 
-                        yAxisLabels.classList.add('traffic-y-labels');
-                        get('.site-speed .site-speed-graph').appendChild(yAxisLabels);
+                        yAxisLabels.classList.add('dygraph-y-labels');
+                        get('.site-speed .dygraph-graph').appendChild(yAxisLabels);
 
                         for (let i = 400; i >= 0; i -= 100) {
                             let viewLabel = document.createElement('div');
@@ -438,38 +419,20 @@
                             yAxisLabels.appendChild(viewLabel);
                         }
                     }
-
-                    siteSpeedTooltips.forEach((tooltip, i) => {
-                        // insert tooltip inside its respective annotation
-                        let annotation = get(`.site-speed .annotation-${i + 1}`);
-
-                        annotation.appendChild(tooltip);
-                        annotation.removeAttribute('title');
-
-                        // reposition tooltip if it goes offscreen
-                        let tooltipRect = tooltip.getBoundingClientRect(),
-                            leftPos = tooltipRect.left,
-                            rightPos = document.body.clientWidth - tooltipRect.right,
-                            margin = 16;
-
-                        if (leftPos < 0) {
-                            tooltip.style.left = -leftPos + margin + 'px';
-                        } else if (rightPos < 0) {
-                            tooltip.style.left = rightPos - margin + 'px';
-                        }
-                    });
                 },
                 legendFormatter: function (data) {
-                    let date, actual, average;
+                    let date, actual, average, change;
 
                     if (data.x) {
                         date = new Date(data.xHTML).toLocaleString(locale, dateOptions);
                         actual = data.series[0].yHTML.actual;
                         average = data.series[0].yHTML.average;
+                        change = data.series[0].yHTML.change;
                     }
 
-                    return `<div class="traffic-legend-date">${date}</div>` +
-                           `<div class="traffic-legend-views">${average} milliseconds</div>`;
+                    return `<div class="dygraph-legend-date">${date}</div>` +
+                           `<div class="dygraph-legend-views">Avg. time: ${average} ms</div>` +
+                           `<div class="dygraph-legend-change">7-day change: ${change}</div>`;
                 },
                 axes: {
                     x: {
@@ -479,50 +442,36 @@
                     y: {
                         drawAxis: false,
                         includeZero: true,
-                        valueRange: [null, 500],
+                        valueRange: [0, 500],
                         valueFormatter: function (num, opts, series, graph, row, col) {
                             // original un-averaged value for this point
                             let currentValue = graph.getValue(row, col);
 
+                            // 7-day change
+                            let oneWeekAgo = graph.getValue(row - 7, col);
+                            let change = Math.round((currentValue - oneWeekAgo) / oneWeekAgo * 100);
+
+                            if (change < 0) {
+                                // replace default hyphen (VERY WRONG) with actual negative symbol
+                                change = '−' + change.toString().substring(1) + '%';
+                            } else {
+                                // plus sign for positive numbers
+                                change = '+' + change + '%';
+                            }
+
+                            // 7-day change not possible for first 7 days
+                            if (row < 7) change = 'N/A';
+
                             return {
                                 actual: currentValue.toLocaleString(locale),
-                                average: Math.round(num).toLocaleString(locale) // auto-averaged over rollPeriod
+                                average: Math.round(num).toLocaleString(locale), // auto-averaged over rollPeriod
+                                change: change
                             };
                         }
                     }
                 }
             }
         );
-
-        // create traffic annotations
-        let siteSpeedAnnotations = [
-                {
-                    x: "2021/07/19",
-                    text: "Some shit"
-                }, {
-                    x: "2021/09/16",
-                    text: "More shit"
-                }, {
-                    x: "2021/10/19",
-                    text: "Big shit"
-                }, {
-                    x: "2021/11/26",
-                    text: "Dookie"
-                }
-            ],
-            siteSpeedTooltips = [];
-
-        siteSpeedAnnotations.forEach((annotation, i) => {
-            annotation.series = 'Speed';
-            annotation.shortText = i + 1;
-            annotation.width = 24;
-            annotation.height = 24;
-            annotation.cssClass = `tooltip-hidden annotation-${i + 1}`;
-            annotation.tickWidth = 2;
-            if (annotation.tickHeight === undefined) annotation.tickHeight = 15;
-
-            createTooltip(annotation.x, annotation.text, siteSpeedTooltips);
-        });
 
         function createTooltip(date, text, tooltips) {
             let tooltip = document.createElement('div'),
