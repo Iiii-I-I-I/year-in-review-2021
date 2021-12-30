@@ -176,8 +176,8 @@
 
     // uses dygraphs library <http://dygraphs.com/>
     function initGraph() {
-        let trafficData = 'data/traffic.csv',
-            siteSpeedData = 'data/site-speed.csv',
+        let trafficData = './data/traffic.csv',
+            siteSpeedData = './data/site-speed.csv',
             gridColor = '#efefef',
             locale = 'default',
             dateOptions = {
@@ -274,7 +274,7 @@
                     }
 
                     return `<div class="dygraph-legend-date">${date}</div>` +
-                           `<div class="dygraph-legend-views">Avg. views: ${average}</div>` +
+                           `<div class="dygraph-legend-views">Views: ${average}</div>` +
                            `<div class="dygraph-legend-change">7-day change: ${change}</div>`;
                 },
                 axes: {
@@ -285,7 +285,7 @@
                     y: {
                         drawAxis: false,
                         includeZero: true,
-                        valueRange: [0, 7000000],
+                        valueRange: [0, 6500000],
                         valueFormatter: function (num, opts, series, graph, row, col) {
                             // original un-averaged value for this point
                             let currentValue = graph.getValue(row, col);
@@ -336,7 +336,7 @@
                 }, {
                     x: "2021/10/06",
                     text: "Old School: Group Ironman Mode is released",
-                    tickHeight: 30
+                    tickHeight: 33
                 }, {
                     x: "2021/10/25",
                     text: "RuneScape: TzekHaar Front is released"
@@ -354,7 +354,7 @@
             annotation.height = 24;
             annotation.cssClass = `tooltip-hidden annotation-${i + 1}`;
             annotation.tickWidth = 2;
-            if (annotation.tickHeight === undefined) annotation.tickHeight = 15;
+            if (annotation.tickHeight === undefined) annotation.tickHeight = 13;
 
             createTooltip(annotation.x, annotation.text, trafficTooltips);
         });
@@ -431,7 +431,7 @@
                     }
 
                     return `<div class="dygraph-legend-date">${date}</div>` +
-                           `<div class="dygraph-legend-views">Avg. time: ${average} ms</div>` +
+                           `<div class="dygraph-legend-views">Time: ${average} ms</div>` +
                            `<div class="dygraph-legend-change">7-day change: ${change}</div>`;
                 },
                 axes: {
