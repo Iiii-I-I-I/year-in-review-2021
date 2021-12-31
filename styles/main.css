@@ -1049,7 +1049,7 @@ section + section {
 .milestone-list {
     position: relative;
     list-style: none;
-    padding: 35px 0 15px 45px;
+    padding: 30px 45px 15px;
 }
 
 /* the vertical line */
@@ -1258,7 +1258,7 @@ section + section {
    -------------- */
 
 figure {
-    margin: 1em 0 0;
+    margin: 1em -45px 0 -45px; /* reverse left/right padding from .milestone-list */
     display: flex;
     flex-flow: row wrap;
 }
@@ -1333,12 +1333,12 @@ figcaption {
     -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     cursor: pointer;
-    animation: .55s fade-in cubic-bezier(0.22, 1, 0.36, 1);
+    animation: .5s fade-in cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .full-image-container {
     margin: auto;
-    animation: .55s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: .5s cubic-bezier(0.22, 1, 0.36, 1);
     animation-name: scale-up, fade-in;
 }
 
