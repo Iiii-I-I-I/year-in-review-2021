@@ -1049,7 +1049,7 @@ section + section {
 .milestone-list {
     position: relative;
     list-style: none;
-    padding: 30px 45px 15px;
+    padding: 30px 0 15px 45px;
 }
 
 /* the vertical line */
@@ -1057,7 +1057,7 @@ section + section {
     content: "";
     position: absolute;
     top: 5px;
-    left: 22px;
+    left: 13px;
     width: 2px;
     height: calc(100% - 5px);
     /*  fade in the ends of the line using pixel values (instead of percentages)
@@ -1080,7 +1080,7 @@ section + section {
 .milestone-list li::before {
     position: absolute;
     top: 33px;
-    left: -29px;
+    left: -38px;
 
     content: '';
     width: 14px;
@@ -1258,16 +1258,9 @@ section + section {
    -------------- */
 
 figure {
-    margin: 1em -45px 0 -45px; /* reverse left/right padding from .milestone-list */
+    margin: 1em 0 0; /* reverse left/right padding from .milestone-list */
     display: flex;
     flex-flow: row wrap;
-}
-
-figcaption {
-    width: 100%;
-    color: var(--text-03);
-    font-size: .85em;
-    margin-top: .75em;
 }
 
 .picture-container {
