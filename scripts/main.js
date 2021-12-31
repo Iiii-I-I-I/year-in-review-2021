@@ -666,7 +666,6 @@
         }
     }
 
-    // @TODO: show "Loading...", hide when image is loaded <https://stackoverflow.com/q/7922404>
     function initModal() {
         let pictures = getAll('picture');
         let src = 'srcFull';

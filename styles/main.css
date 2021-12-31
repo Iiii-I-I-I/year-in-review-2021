@@ -1270,13 +1270,13 @@ figcaption {
     margin-top: .75em;
 }
 
-figure .thumb {
-    cursor: pointer;
-}
-
 .picture-container {
     position: relative;
     flex: 1;
+}
+
+.picture-container .thumb {
+    cursor: pointer;
 }
 
 .picture-container + .picture-container {
@@ -1287,7 +1287,7 @@ figure .thumb {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: var(--border-radius);
+    border-radius: .5em;
     box-shadow: var(--shadow-02);
     margin: auto;
 }
@@ -1295,14 +1295,14 @@ figure .thumb {
 .fullscreen-button {
     position: absolute;
     display: flex;
-    top: .6em;
-    right: .6em;
+    top: .5em;
+    right: .5em;
     width: 34px;
     height: 34px;
 
     background-color: white;
     border-radius: 100%;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
     opacity: 0;
     transform: translateY(-3px);
     transition: .25s var(--ease-out-quad);
@@ -1311,7 +1311,7 @@ figure .thumb {
 }
 
 .picture-container:hover .fullscreen-button {
-    opacity: .85;
+    opacity: .9;
     transform: translateY(0);
 }
 
