@@ -35,27 +35,26 @@
                 "explanation": "Acadia (instead of <a class='link' href='https://en.wikipedia.org/wiki/Vachellia_tortilis' target='_blank' rel='noopener'>acacia</a>) was a mistake that the developers decided to keep because they <a class='link' href='https://www.reddit.com/r/runescape/comments/6fgvda/acadia_trees/dii234m/' target='_blank' rel='noopener'>liked it better</a>."
             },
             {
-                "question": "Despite the fact that wyverns are extant, how does the natural history quiz in the Varrock Museum claim they died out?",
+                "question": "The TzekHaar Front, led by TzKal-Zuk, is the fourth and final front of the Elder God Wars Dungeon. Which Elder God is it affiliated with?",
                 "answers": {
-                    "a": "They contracted a disease that spread quickly",
-                    "b": "They were hunted to extinction by adventurers",
-                    "c": "Climate change caused their habitat to shrink",
-                    "d": "Janet Reno"
+                    "a": "Jas",
+                    "b": "Bik",
+                    "c": "Ful",
+                    "d": "Wen"
                 },
                 "correctAnswer": "c"
             },
             {
-                "question": "The Dragonkin fled their homeworld and arrived on Gielinor pre-First Age, where they built the city of Orthen. What were they fleeing from?",
+                "question": "Not including the basement or the roof of the bank, how many floors are there in Lumbridge Castle?",
                 "answers": {
-                    "a": "A wave of natural disasters that devastated their cities",
-                    "b": "Enslavement of their race by the Mahjarrat",
-                    "c": "A series of wars that killed most of the population",
-                    "d": "The end of their universe, caused by the Elder Gods"
+                    "a": "Two",
+                    "b": "Three",
+                    "c": "Four",
+                    "d": "Five"
                 },
-                "correctAnswer": "d",
-                "explanation": "According to <a class='link' href='https://runescape.wiki/w/Reldo%27s_ages_seventeenth_edition' target='_blank' rel='noopener'>Reldo's book</a>: <blockquote>This reptilian species had survived the destruction of their universe and the creation of ours by hiding, and now sought out the most habitable planet, which happened to be Gielinor.</blockquote>"
+                "correctAnswer": "b",
+                "explanation": "There are three floors to <a class='link' href='https://runescape.wiki/w/Reldo%27s_ages_seventeenth_edition' target='_blank' rel='noopener'>Lumbridge Castle</a>: the ground floor, with the kitchen and dining room; the first floor, with Duke Horacio's bedroom; and the roof, where the bank is located."
             },
-
             {
                 "question": "Of the four following towns, which one is furthest south?",
                 "answers": {
