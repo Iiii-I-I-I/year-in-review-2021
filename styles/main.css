@@ -1310,7 +1310,7 @@ figure {
 }
 
 .picture-container:hover .fullscreen-button {
-    opacity: .9;
+    opacity: 1;
     transform: translateY(0);
 }
 
@@ -1337,7 +1337,7 @@ figure {
 
 .full-image-container {
     margin: auto;
-    animation: .5s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: .55s cubic-bezier(0.22, 1, 0.36, 1);
     animation-name: scale-up, fade-in;
 }
 
