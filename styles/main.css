@@ -917,7 +917,8 @@ section + section {
     right: calc(var(--range-pad) + 5px);
 }
 
-.site-speed .dygraph-y-labels {
+.site-speed .dygraph-y-labels,
+.edits .dygraph-y-labels {
     left: var(--range-pad);
 }
 
@@ -933,6 +934,12 @@ section + section {
     align-items: flex-end;
     justify-content: flex-end;
     height: calc(300px / 6.5);
+}
+
+.edits .y-label {
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    height: calc(300px / 4.6);
 }
 
 .site-speed .y-label {

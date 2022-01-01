@@ -178,6 +178,7 @@
     function initGraph() {
         let trafficData = './data/traffic.csv',
             siteSpeedData = './data/site-speed.csv',
+            editsData = './data/edits.csv',
             gridColor = '#efefef',
             locale = 'en-GB',
             dateOptions = {
@@ -443,6 +444,120 @@
                         drawAxis: false,
                         includeZero: true,
                         valueRange: [0, 500],
+                        valueFormatter: function (num, opts, series, graph, row, col) {
+                            // original un-averaged value for this point
+                            let currentValue = graph.getValue(row, col);
+
+                            // 7-day change
+                            let oneWeekAgo = graph.getValue(row - 7, col);
+                            let change = Math.round((currentValue - oneWeekAgo) / oneWeekAgo * 100);
+
+                            if (change < 0) {
+                                // replace default hyphen (VERY WRONG) with actual negative symbol
+                                change = '−' + change.toString().substring(1) + '%';
+                            } else {
+                                // plus sign for positive numbers
+                                change = '+' + change + '%';
+                            }
+
+                            // 7-day change not possible for first 7 days
+                            if (row < 7) change = 'N/A';
+
+                            return {
+                                actual: currentValue.toLocaleString(locale),
+                                average: Math.round(num).toLocaleString(locale), // auto-averaged over rollPeriod
+                                change: change
+                            };
+                        }
+                    }
+                }
+            }
+        );
+
+        // draw edits graph
+        let editsGraph = new Dygraph(get('.edits .dygraph-graph'), editsData, {
+                color: '#6988de',
+                strokeWidth: 3,
+                axisLineColor: gridColor,
+                gridLineColor: gridColor,
+                gridLineWidth: 1,
+                highlightCircleSize: 4,
+                xRangePad: 4, // must match highlightCircleSize
+                labelsDiv: get('.edits .dygraph-legend'),
+                rollPeriod: 7,
+                fillGraph: true,
+                interactionModel: {
+                    // allow user to drag finger across graph to see pageview numbers
+                    'touchmove': function (event) {
+                        let coords = event.touches[0];
+                        let simulation = new MouseEvent('mousemove', {
+                                clientX: coords.clientX,
+                                clientY: coords.clientY
+                            }
+                        );
+
+                        event.preventDefault();
+                        event.target.dispatchEvent(simulation);
+                    }
+                },
+                drawCallback: function (dygraph, isInitial) {
+                    if (isInitial) {
+                        // create custom x-axis labels (default ones are misaligned)
+                        for (let i = 0; i < 12; i++) {
+                            let month = new Date(2021, i).toLocaleString(locale, { month: 'short' }),
+                                labelNode = document.createElement('div'),
+                                shortLabel = document.createElement('span'),
+                                longLabel = document.createElement('span');
+
+                            labelNode.classList.add('x-label');
+                            shortLabel.classList.add('short-month');
+                            shortLabel.textContent = month.substring(0, 1);
+                            longLabel.classList.add('long-month');
+                            longLabel.textContent = month;
+
+                            labelNode.appendChild(shortLabel);
+                            labelNode.appendChild(longLabel);
+                            get('.edits .dygraph-x-labels').appendChild(labelNode);
+                        }
+
+                        // create custom y-axis labels (can't position default ones over top of graph)
+                        let yAxisLabels = document.createElement('div');
+
+                        yAxisLabels.classList.add('dygraph-y-labels');
+                        get('.edits .dygraph-graph').appendChild(yAxisLabels);
+
+                        for (let i = 4; i >= 0; i--) {
+                            let viewLabel = document.createElement('div');
+
+                            viewLabel.classList.add('y-label');
+                            viewLabel.textContent = i + ((i === 4) ? 'k' : '');
+                            yAxisLabels.appendChild(viewLabel);
+                        }
+                    }
+                },
+                legendFormatter: function (data) {
+                    let date, actual, average, change;
+
+                    if (data.x) {
+                        date = new Date(data.xHTML).toLocaleString(locale, dateOptions);
+                        actual = data.series[0].yHTML.actual;
+                        average = data.series[0].yHTML.average;
+                        change = data.series[0].yHTML.change;
+                    }
+
+                    return `<div class="dygraph-legend-date">${date}</div>` +
+                           `<div class="dygraph-legend-views">Edits: ${average}</div>` +
+                           `<div class="dygraph-legend-change">7-day change: ${change}</div>`;
+                },
+                axes: {
+                    x: {
+                        drawAxis: false,
+                        drawGrid: false
+                    },
+                    y: {
+                        drawAxis: false,
+                        includeZero: true,
+                        valueRange: [0, 4600],
                         valueFormatter: function (num, opts, series, graph, row, col) {
                             // original un-averaged value for this point
                             let currentValue = graph.getValue(row, col);
