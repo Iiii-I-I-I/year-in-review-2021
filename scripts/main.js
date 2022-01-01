@@ -175,7 +175,7 @@
     }
 
     // uses dygraphs library <http://dygraphs.com/>
-    function initGraph() {
+    function initGraphs() {
         let trafficData = './data/traffic.csv',
             siteSpeedData = './data/site-speed.csv',
             editsData = './data/edits.csv',
@@ -252,7 +252,7 @@
                             let viewLabel = document.createElement('div');
 
                             viewLabel.classList.add('y-label');
-                            viewLabel.textContent = i + ((i === 6) ? 'm' : '');
+                            viewLabel.textContent = i + ((i !== 0) ? 'm' : '');
                             yAxisLabels.appendChild(viewLabel);
                         }
                     }
@@ -416,7 +416,7 @@
                             let viewLabel = document.createElement('div');
 
                             viewLabel.classList.add('y-label');
-                            viewLabel.textContent = i + ((i === 400) ? 'ms' : '');
+                            viewLabel.textContent = i + ((i !== 0) ? 'ms' : '');
                             yAxisLabels.appendChild(viewLabel);
                         }
                     }
@@ -530,7 +530,7 @@
                             let viewLabel = document.createElement('div');
 
                             viewLabel.classList.add('y-label');
-                            viewLabel.textContent = i + ((i === 4) ? 'k' : '');
+                            viewLabel.textContent = i + ((i !== 0) ? 'k' : '');
                             yAxisLabels.appendChild(viewLabel);
                         }
                     }
@@ -680,7 +680,7 @@
 
                     // tabindex="0" for first element so it can be focused, "-1" for the rest
                     choice.setAttribute('tabindex', (i === 0) ? 0 : -1);
-                    choice.classList.add('quiz-choice');
+                    choice.classList.add('quiz-choice', 'button');
                     choice.dataset.letter = letter;
                     choice.textContent = question.answers[letter];
 
@@ -730,7 +730,7 @@
                     });
 
                     // other things to run after question has been answered
-                    e.target.closest('.quiz-group').classList.remove('unanswered');
+                    e.target.closest('.quiz-group').classList.add('answered');
                     choicesNode.removeEventListener('click', clicked, false);
                     choicesNode.removeEventListener('keydown', pressed, false);
                     choicesNode.removeEventListener('keydown', keyHandler, false);
@@ -831,7 +831,7 @@
     initPlants();
     initCards();
     initTabs();
-    initGraph();
+    initGraphs();
     initQuiz();
     initModal();
 }());
